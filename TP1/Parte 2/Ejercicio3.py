@@ -15,7 +15,6 @@ Y = df['y']
 # Armo una funcion para graficar cada punto
 
 for i in range(len(df)):
-    plt.title("Ejercicio 1.a" )    
     plt.scatter(X[i], Y[i], color='black')
 
 # Calcurar Promedios y coeficientes de la recta
@@ -35,7 +34,6 @@ plt.show()
 # Armo una funcion para graficar cada punto
 
 for i in range(len(df)):
-    plt.title("Ejercicio 1.a" )    
     plt.scatter(X[i], Y[i], color='black')
 
 # Calcurar Promedios y coeficientes de la recta
@@ -54,14 +52,14 @@ plt.show()
 # b)
 # Lo que ocurre es que nos queda la recta ubicada en el x=3 aproximadamente. Sucede dado que todas las x son iguales.
 
-# c)
-
+# Calculo del det(X^t * X)
 v = [X, Y]
 v = np.array(v)
-v = v.T
-v = v.reshape(2, 2)
-v = np.linalg.inv(v)
-v = np.dot(v, np.array([X, Y]))
-v = v.T
-np.t()
-np.dot(X, Y) / np.dot(X, X)
+mult = np.dot(v, v.T)
+det = np.linalg.det(mult)
+print(det)
+
+# c)
+# La diferencia entre este grafico y los anteriores es que este es mas como una constante o linea vertical, a diferencia de los anteriores que son crecientes/decrecientes
+# permitiendo una linea de tendencia o de regresion con mas sentido.
+
